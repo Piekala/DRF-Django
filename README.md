@@ -56,8 +56,8 @@ erDiagram
     }
     Customer {
       int id
-      FK segment_id
-      FK account_manager_id
+      int segment_id
+      int account_manager_id
       string company_name
       string document
       string email
@@ -68,7 +68,7 @@ erDiagram
     }
     CustomerAddress {
       int id
-      FK customer_id
+      int customer_id
       string label
       string street
       string city
@@ -93,8 +93,8 @@ erDiagram
     }
     Product {
       int id
-      FK category_id
-      FK supplier_id
+      int category_id
+      int supplier_id
       string name
       string sku
       string description
@@ -107,8 +107,8 @@ erDiagram
     }
     SalesOrder {
       int id
-      FK customer_id
-      FK salesperson_id
+      int customer_id
+      int salesperson_id
       string status
       date expected_delivery
       string notes
@@ -119,15 +119,15 @@ erDiagram
     }
     SalesOrderItem {
       int id
-      FK order_id
-      FK product_id
+      int order_id
+      int product_id
       int quantity
       decimal unit_price
       decimal line_total
     }
     PaymentTransaction {
       int id
-      FK order_id
+      int order_id
       string provider
       string external_id
       decimal amount
@@ -144,8 +144,8 @@ erDiagram
     }
     Shipment {
       int id
-      FK order_id
-      FK warehouse_id
+      int order_id
+      int warehouse_id
       string tracking_code
       string carrier
       string status
@@ -154,8 +154,8 @@ erDiagram
     }
     ShipmentItem {
       int id
-      FK shipment_id
-      FK order_item_id
+      int shipment_id
+      int order_item_id
       int quantity
     }
 ```
