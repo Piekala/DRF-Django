@@ -1,0 +1,14 @@
+"""Sinais do Django usados para manter consistencia automatica."""
+
+from django.contrib.auth import get_user_model
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from accounts.models import UserProfile
+
+
+@receiver(post_save, sender=get_user_model())
+def create_profile_for_new_user(sender, instance, created, **kwargs):
+    """Cria perfil basico toda vez que um usuario nasce no sistema."""
+    if created:
+        UserProfile.objects.get_or_create(user=instance)
