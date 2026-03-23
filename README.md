@@ -43,7 +43,7 @@ erDiagram
 
     UserProfile {
       int id
-      FK user_id
+      int user_id
       string role
       string phone
       string department
