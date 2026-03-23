@@ -47,12 +47,12 @@ erDiagram
       string role
       string phone
       string department
-      text bio
+      string bio
     }
     CustomerSegment {
       int id
       string name
-      text description
+      string description
     }
     Customer {
       int id
@@ -64,7 +64,7 @@ erDiagram
       string phone
       string status
       decimal credit_limit
-      text notes
+      string notes
     }
     CustomerAddress {
       int id
@@ -74,14 +74,14 @@ erDiagram
       string city
       string state
       string postal_code
-      bool is_main
+      boolean is_main
     }
     Category {
       int id
       string name
       string slug
-      text description
-      bool is_featured
+      string description
+      boolean is_featured
     }
     Supplier {
       int id
@@ -89,7 +89,7 @@ erDiagram
       string email
       string phone
       int lead_time_days
-      bool is_active
+      boolean is_active
     }
     Product {
       int id
@@ -97,13 +97,13 @@ erDiagram
       FK supplier_id
       string name
       string sku
-      text description
+      string description
       decimal price
       decimal cost
       int stock
       int reorder_level
       string status
-      bool is_published
+      boolean is_published
     }
     SalesOrder {
       int id
@@ -111,7 +111,7 @@ erDiagram
       FK salesperson_id
       string status
       date expected_delivery
-      text notes
+      string notes
       decimal subtotal
       decimal shipping_fee
       decimal discount_amount
@@ -140,7 +140,7 @@ erDiagram
       string code
       string city
       string state
-      bool is_active
+      boolean is_active
     }
     Shipment {
       int id
